@@ -51,10 +51,8 @@ async function handleQuestion(page, browser) {
         return nextBtn.getAttribute("class");
     }, nextBtn);
     if (className === "disabled") {
-        await console.log("Inside If")
         return;
     } else {
-        await console.log("Inside Else");
         await Promise.all([nextBtn.click(), page.waitForNavigation({ waitUntil: "networkidle0" })]);
         await handleQuestion(page, browser);
     }
@@ -62,7 +60,6 @@ async function handleQuestion(page, browser) {
 }
 
 async function handleSingleQuestion(newTab, link, i) {
-    await console.log(i);
     await newTab.goto(link, { waitUntil: "networkidle0" });
     await newTab.waitForSelector(".tag");
     await newTab.click("li[data-tab=moderators]");
