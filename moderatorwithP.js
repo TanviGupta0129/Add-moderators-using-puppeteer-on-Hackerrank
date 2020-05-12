@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 let fs = require("fs");
 let credentialsFile = process.argv[2];
 let metafile = process.argv[3];
-let Modname = "GSN__";
+let Modname = "Add moderator name";
 (async () => {
     const browser = await puppeteer.launch({
         headless: false,
